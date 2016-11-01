@@ -1,0 +1,46 @@
+{
+  "name": "Burrito",
+  "version": "1.0.0",
+  "description": "Development boilerplate catalogue.",
+  "keywords": [
+    "boilerplate",
+    "framework",
+    "library",
+    "development",
+    "website",
+    "front-end",
+    "back-end",
+    "mexican cuisine"
+  ],
+  "homepage": "https://github.com/tyrannosaurusmex/Burrito",
+  "author": "Tyrannosaurus Mex",
+  "contributors": [
+    "Chris Daniells <chrisdaniells@gmail.com>",
+    "Edmund Reed <esr360@live.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/tyrannosaurusmex/Burrito/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "*",
+    "grunt": "*",
+    "grunt-babel": "*",
+    "babel-preset-es2015": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-notify": "*",
+    "grunt-postcss": "*",
+    "grunt-sass": "*",
+    "grunt-scss-lint": "*"
+  },
+  "dependencies": {
+    "express": "*",
+    "express-handlebars": "*",
+    "grunt-contrib-concat": "^1.0.1",
+    "react": "*",
+    "react-dom": "*"
+  }
+}
