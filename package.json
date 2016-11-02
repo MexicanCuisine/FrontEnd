@@ -21,10 +21,15 @@
   "bugs": {
     "url": "https://github.com/tyrannosaurusmex/Burrito/issues"
   },
+  "scripts": {
+    "start": "node dist/server.js",
+    "build": "babel src -d dist"
+  },
   "devDependencies": {
     "autoprefixer": "*",
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.9.0",
     "grunt": "*",
-    "grunt-babel": "*",
     "babel-preset-es2015": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-copy": "*",

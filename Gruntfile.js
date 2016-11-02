@@ -318,30 +318,13 @@ module.exports = function(grunt) {
                     message: 'Your app has been successfully built!'
                 }
             }
-        },
-        "babel": {
-            options: {
-                sourceMap: false
-            },
-            dist: {
-               files: [
-                    {
-                        expand: true,
-                        cwd: 'src/',
-                        src: ['*.js'],
-                        dest: 'dist/'
-                    }
-                ]
-            }
         }
-
     });
     
     /**************************************************************
      * Load NPM Tasks
      *************************************************************/
     
-    grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
