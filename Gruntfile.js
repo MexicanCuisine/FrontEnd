@@ -318,6 +318,21 @@ module.exports = function(grunt) {
                     message: 'Your app has been successfully built!'
                 }
             }
+        },
+        "babel": {
+            options: {
+                sourceMap: false
+            },
+            dist: {
+               files: [
+                    {
+                        expand: true,
+                        cwd: 'src/',
+                        src: ['*.js'],
+                        dest: 'dist/'
+                    }
+                ]
+            }
         }
 
     });
@@ -356,7 +371,7 @@ module.exports = function(grunt) {
             'sass:' + environment,
             'postcss',
             'lint',
-            'test'
+            'test',
         ];
         if (environment == 'prod') {
             assetTasks.push(
@@ -385,6 +400,11 @@ module.exports = function(grunt) {
         
     // Test
     grunt.registerTask('test', [
+    ]);
+
+    // Build JS
+    grunt.registerTask('build', [
+        'babel'
     ]);
 
 };
