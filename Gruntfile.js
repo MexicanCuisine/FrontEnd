@@ -385,9 +385,4 @@ module.exports = function(grunt) {
     grunt.registerTask('test', [
     ]);
 
-    // Build JS
-    grunt.registerTask('build', [
-        'babel'
-    ]);
-
 };
