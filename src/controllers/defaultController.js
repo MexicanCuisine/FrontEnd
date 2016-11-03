@@ -1,6 +1,6 @@
 module.exports = (app) => {
     app.get('/', (req, res) => {
-        res.status(200).send('hello');
+        res.status(200).render('index');
     });
 
     app.use((req, res) => {
