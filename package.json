@@ -47,6 +47,7 @@
     "express": "*",
     "express-handlebars": "*",
     "grunt-contrib-concat": "^1.0.1",
+    "hbs": "^4.0.1",
     "react": "*",
     "react-dom": "*"
   }
