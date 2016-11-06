@@ -40,17 +40,11 @@ module.exports = function(grunt) {
     var images_dist  = 'dist/images/';
 
     /**
-     * Set the path to the compiled theme assets
-     * @var {string} theme_dist
-     */
-    var theme_dist  = 'dist/' + theme + '/';
-
-    /**
      * Set the scripts to be included in your theme's main js file
      * @var {object} _scripts
      */
     var _scripts = [
-        'assets/js/**/*.js',
+        'assets/js/src/components/**/*.js',
         'assets/themes/<%= theme %>/<%= theme %>.js'
     ];
 
@@ -58,9 +52,7 @@ module.exports = function(grunt) {
      * Set all global scripts to be used by the project
      * @var {object} _globalScripts
      */
-    var _globalScripts = [
-        'assets/vendor/jQuery/dist/jquery.js'
-    ];
+    var _globalScripts = [];
 
     /**
      * Set all global styles to be used by the project
@@ -77,7 +69,6 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         theme: theme,
-        theme_dist: theme_dist,
         
         /**
          * Clean
@@ -108,7 +99,7 @@ module.exports = function(grunt) {
         concat: {
             app: {
                 src: _scripts,
-                dest: theme_dist + 'app.js',
+                dest: 'dist/public/js/app.js',
             }
         },
         
@@ -153,7 +144,7 @@ module.exports = function(grunt) {
                     outputStyle: 'expanded'
                 },
                 files: {
-                    '<%= theme_dist %>app.css': 'assets/app.scss'
+                    'dist/public/css/app.css': 'assets/app.scss'
                 }
             },
             prod: {
@@ -162,7 +153,7 @@ module.exports = function(grunt) {
                     sourcemap: 'none'
                 },
                 files: {
-                    '<%= theme_dist %>app.min.css': 'assets/app.scss'
+                    'dist/public/css/app.min.css': 'assets/app.scss'
                 }
             }
         },
@@ -184,7 +175,7 @@ module.exports = function(grunt) {
                 ]
             },
             build: {
-                src: theme_dist + '*.css'
+                src: 'dist/public/css/**/*.css'
             }
         },
 
@@ -220,8 +211,8 @@ module.exports = function(grunt) {
                 'assets/scss/**/*.scss'
             ],
             options: {
-                config: '.scss-lint.yml',
-                colorizeOutput: false
+                colorizeOutput: true,
+                config: '.scss-lint.yml'
             },
         },
 
@@ -232,6 +223,7 @@ module.exports = function(grunt) {
         jshint: {
             app: [
                 'Gruntfile.js', 
+                'src/**/*.js',
                 'assets/js/**/*.js',
                 'assets/themes/**/*.js'
             ]
@@ -294,10 +286,11 @@ module.exports = function(grunt) {
                 ]
             },
             templates: {
-                files: 'templates/**/*',
-                tasks: [
-                    'notify:templates'
-                ]
+                files: ['**/*.js'],
+                tasks: ['express'],
+                options: {
+                    spawn: false
+                }
             }
         },
 
