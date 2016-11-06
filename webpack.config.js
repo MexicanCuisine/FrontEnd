@@ -4,7 +4,7 @@ module.exports = {
     ],
     output: {
         path: './assets/js/dist/',
-        filename: "bundles.js"
+        filename: 'bundles.js'
     },
     module: {
         loaders: [{
