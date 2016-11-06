@@ -1,7 +1,14 @@
-{{> header}}
+{{> globalDoctype}}
 
-{{> breadcrumb}}
+<html>
+    {{> globalHead}}
+    <body>
+        {{> header}}
 
-{{{body}}}
+        {{> breadcrumb}}
 
-{{> footer}}
+        {{{body}}}
+
+        {{> footer}}
+    </body>
+</html>
