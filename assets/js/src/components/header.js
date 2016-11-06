@@ -18,6 +18,6 @@ burrito.header = (function(document, $, undefined) {
       key: 'value',
     }, custom);
 
-  }
+  };
 
 }(document, window.jQuery));
