@@ -238,6 +238,27 @@ module.exports = function(grunt) {
         },
 
         /**
+         * Express Server
+         * @see https://www.npmjs.com/package/grunt-express-server
+         */
+        express: {
+            options: {
+                // Override defaults here 
+            },
+            dev: {
+                options: {
+                    script: 'path/to/dev/server.js'
+                }
+            },
+            prod: {
+                options: {
+                    script: 'path/to/prod/server.js',
+                    node_env: 'production'
+                }
+            }
+        },
+
+        /**
          * Watch
          * @see https://github.com/gruntjs/grunt-contrib-watch
          */
@@ -322,6 +343,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-postcss');
