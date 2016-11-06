@@ -76,19 +76,16 @@ module.exports = function(grunt) {
          */
         clean: {
             app: [
-                'dist/*', 
-                '!dist/images/**'
             ],
             scripts: [
-                'dist/scripts/**/*.js', 
-                '!dist/**/*.min.js'
+                '!dist/assets/**/*.min.js'
             ],
             styles: [
-                'dist/**/*.css', 
-                '!dist/**/*.min.css'
+                'dist/assets/**/*.css', 
+                '!dist/assets/**/*.min.css'
             ],
             images: {
-                src: 'dist/images'
+                src: 'dist/assets/images'
             }
         },
 
@@ -223,7 +220,6 @@ module.exports = function(grunt) {
         jshint: {
             app: [
                 'Gruntfile.js', 
-                'src/**/*.js',
                 'assets/js/**/*.js',
                 'assets/themes/**/*.js'
             ]
@@ -235,17 +231,18 @@ module.exports = function(grunt) {
          */
         express: {
             options: {
-                // Override defaults here 
+                background: false,
+                delay: 3
             },
             dev: {
                 options: {
-                    script: 'path/to/dev/server.js'
+                    script: 'dist/server.js'
                 }
             },
             prod: {
                 options: {
-                    script: 'path/to/prod/server.js',
-                    node_env: 'production'
+                    script: 'dist/server.js',
+                    node_env: 'prod'
                 }
             }
         },
@@ -269,6 +266,10 @@ module.exports = function(grunt) {
                     'sassdoc',
                     'notify:css'
                 ],
+            },
+            express: {
+                files: 'dist/server.js',
+                tasks: ['express:' + env],
             },
             scripts: {
                 files: _scripts,
@@ -375,6 +376,7 @@ module.exports = function(grunt) {
     // Default Grunt task
     grunt.registerTask('default', [
         'compile:' + env,
+        'express:' + env,
         'watch'
     ]);
       
