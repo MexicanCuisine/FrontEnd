@@ -7,7 +7,7 @@ import handlebars from 'express-handlebars';
 app.use('/public', express.static(__dirname + '/public'));
 
 // Set Handlebars as templating engine
-app.set('view engine', 'handlebars');
+app.set('view engine', 'hbs');
 // Set default handlebars layout to main.hbs
 app.engine('handlebars', handlebars(
     {
