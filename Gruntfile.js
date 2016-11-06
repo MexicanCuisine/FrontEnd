@@ -50,10 +50,7 @@ module.exports = function(grunt) {
      * @var {object} _scripts
      */
     var _scripts = [
-        'assets/modules/utilities/core/core.js',
-        'assets/tools/**/*.js',
-        'assets/modules/elements/**/*.js',
-        'assets/modules/objects/**/*.js',
+        'assets/js/**/*.js',
         'assets/themes/<%= theme %>/<%= theme %>.js'
     ];
 
@@ -62,9 +59,7 @@ module.exports = function(grunt) {
      * @var {object} _globalScripts
      */
     var _globalScripts = [
-        'assets/vendor/jQuery/dist/jquery.js',
-        'assets/vendor/pseudojQuery/src/pseudojQuery-start.js',
-        'assets/vendor/pseudojQuery/src/pseudojQuery-end.js'
+        'assets/vendor/jQuery/dist/jquery.js'
     ];
 
     /**
@@ -222,8 +217,7 @@ module.exports = function(grunt) {
          */
         scsslint: {
             allFiles: [
-                'assets/modules/**/*.scss',
-                'assets/themes/**/*.scss'
+                'assets/scss/**/*.scss'
             ],
             options: {
                 config: '.scss-lint.yml',
@@ -238,8 +232,7 @@ module.exports = function(grunt) {
         jshint: {
             app: [
                 'Gruntfile.js', 
-                'assets/includes/**/*.js',
-                'assets/modules/**/*.js',
+                'assets/js/**/*.js',
                 'assets/themes/**/*.js'
             ]
         },
@@ -254,8 +247,7 @@ module.exports = function(grunt) {
             },
             scss: {
                 files: [
-                    'assets/modules/**/*.scss',
-                    'assets/themes/**/*.scss'
+                    'assets/scss/**/*.scss'
                 ],
                 tasks: [ 
                     'sass:' + env, 
@@ -283,7 +275,6 @@ module.exports = function(grunt) {
             templates: {
                 files: 'templates/**/*',
                 tasks: [
-                    'assemble',
                     'notify:templates'
                 ]
             }
