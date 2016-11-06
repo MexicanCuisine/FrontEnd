@@ -1,0 +1,12 @@
+.button {
+
+    display: inline-block;
+    background: blue;
+    color: white;
+    padding: 1em;
+
+    &--large {
+        font-size: 1.4em;
+    }
+
+}

@@ -28,9 +28,10 @@
   "devDependencies": {
     "autoprefixer": "*",
     "babel-cli": "^6.14.0",
-    "babel-preset-es2015": "^6.9.0",
-    "grunt": "*",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
     "babel-preset-es2015": "*",
+    "grunt": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-jshint": "*",
@@ -39,7 +40,8 @@
     "grunt-notify": "*",
     "grunt-postcss": "*",
     "grunt-sass": "*",
-    "grunt-scss-lint": "*"
+    "grunt-scss-lint": "*",
+    "webpack": "^1.13.3"
   },
   "dependencies": {
     "express": "*",
