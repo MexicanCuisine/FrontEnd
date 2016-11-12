@@ -3,11 +3,12 @@ let app = express();
 
 import handlebars from 'express-handlebars';
 
+
 // Set directory for static assets
 app.use('/public', express.static(__dirname + '/public'));
 
 // Set Handlebars as templating engine
-app.set('view engine', 'hbs');
+app.set('view engine', 'handlebars');
 // Set default handlebars layout to main.hbs
 app.engine('handlebars', handlebars(
     {

@@ -1,10 +1,10 @@
 module.exports = {
     entry: [
-        './assets/js/src/index.js'
+        './assets/js/app.js'
     ],
     output: {
-        path: './assets/js/dist/',
-        filename: 'bundles.js'
+        path: './dist/public/js',
+        filename: 'bundle.js'
     },
     module: {
         loaders: [{
