@@ -17,30 +17,30 @@ export default function reducer(
         case "FETCH_USER_REJECTED":
             return {...state, fetching: false, error: action.payload}
             break;
-        case "FETCH_USER_FULFILLED": {
+        case "FETCH_USER_FULFILLED":
             return {
                 ...state,
                 fetching: false,
                 fetched: true,
                 user: action.payload
             }
-        }
-        case "SET_USER_NAME": {
+            break;
+        case "SET_USER_NAME":
             return {
                 ...state,
                 user: {
                     ...state.user, name: action.payload
                 }
             }
-        }
-        case "SET_USER_AGE": {
+            break;
+        case "SET_USER_AGE":
             return {
                 ...state,
                 user: {
                     ...state.user, age: action.payload
                 }
             }
-        }
+            break;
     }
 
     return state;
