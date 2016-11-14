@@ -14,3 +14,7 @@
 - `webpack`
 
 /assets/js/src -> /assets/js/dist
+
+
+*TODO*
+- Remove all JS stuff from grunt other than linting.
